@@ -1,0 +1,24 @@
+{
+  "name": "welcome",
+  "version": "1.0.0",
+  "description": "A discord welcoming bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moyshik7/discord-welcome-bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moyshik7/discord-welcome-bot/issues"
+  },
+  "homepage": "https://github.com/moyshik7/discord-welcome-bot#readme",
+  "dependencies": {
+    "better.db": "^1.2.3",
+    "discord.js": "^12.5.3"
+  }
+}
