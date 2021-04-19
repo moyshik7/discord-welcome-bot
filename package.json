@@ -20,5 +20,8 @@
   "dependencies": {
     "better.db": "^1.2.3",
     "discord.js": "^12.5.3"
+  },
+  "devDependencies": {
+    "eslint": "^7.24.0"
   }
 }

@@ -1,4 +1,4 @@
 module.exports = {
     PREFIX: "_",
-    BOT_TOKEN: ""
+    BOT_TOKEN: "PUT.THE.BOT.TOKEN.HERE"
 }
