@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const Client = new Discord.Client({ ws: { intents:    [
+const Client = new Discord.Client({ ws: { intents: [
         'GUILD_MEMBERS',
         'GUILDS',
         'GUILD_MESSAGES',
@@ -19,14 +19,8 @@ Client.on("ready", () => {
     Client.guilds.cache.forEach(g => console.log(g.name));
 });
 
-Client.on('guildMemberAdd', async (member) => {
-    await welcomeDB.get(`welcome_${member.guild.id}`).then(async (res) => {
-        if(!res){ return(false) }
-        let welChannel = await Client.channels.cache.get(res)
-        if(!welChannel){ return(false) }
-        if(!member){ return(false) }
-        Welcome(member, welChannel);
-    });
+Client.on('guildMemberAdd', (member) => {
+    Welcome(member);
 });
 
 /*Client.on('guildMemberRemove', member => {
