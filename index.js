@@ -10,6 +10,7 @@ const Client = new Discord.Client({ ws: { intents: [
 
 const Settings = require("./settings");
 const Welcome = require("./welcome");
+const Goodbye = require("./goodbye");
 
 
 const DbHandler = require("better.db");
@@ -20,12 +21,12 @@ Client.on("ready", () => {
 });
 
 Client.on('guildMemberAdd', (member) => {
-    Welcome(member);
+    Welcome(member, Client);
 });
 
-/*Client.on('guildMemberRemove', member => {
-    member.guild.channels.get('channelID').send('**' + member.user.username + '**, has left the server');
-});*/
+Client.on('guildMemberRemove', member => {
+    Goodbye(member, Client);
+});
 
 Client.on("message", message => {
     console.log(message.content);

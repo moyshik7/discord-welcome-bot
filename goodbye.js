@@ -3,7 +3,7 @@ const DbHandler = require("better.db");
 const goodbyeDB = new DbHandler("./db/goodbye.db");
 
 
-module.exports = async (member) => {
+module.exports = async (member, Client) => {
     await goodbyeDB.get(`goodbye_${member.guild.id}`).then(async (res) => {
         if (!res) { return(false) } //No goodbye message channel set
         let byeChannel = await Client.channels.cache.get(res);

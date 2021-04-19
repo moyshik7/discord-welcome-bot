@@ -3,7 +3,7 @@ const DbHandler = require("better.db");
 const welcomeDB = new DbHandler("./db/welcome.db");
 
 
-module.exports = async (member) => {
+module.exports = async (member, Client) => {
     await welcomeDB.get(`welcome_${member.guild.id}`).then(async (res) => {
         if (!res) { return(false) } //No welcome message channel set
         let welChannel = await Client.channels.cache.get(res);
