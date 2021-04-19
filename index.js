@@ -13,8 +13,6 @@ const Welcome = require("./welcome");
 const Goodbye = require("./goodbye");
 
 
-const DbHandler = require("better.db");
-const welcomeDB = new DbHandler("./db/welcome.db");
 Client.on("ready", () => {
     console.log(`Ready and listening in ${Client.guilds.cache.size} servers`);
     Client.guilds.cache.forEach(g => console.log(g.name));
@@ -31,4 +29,5 @@ Client.on('guildMemberRemove', member => {
 Client.on("message", message => {
     console.log(message.content);
 });
+
 Client.login(Settings.BOT_TOKEN);
